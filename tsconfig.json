@@ -7,8 +7,9 @@
             "es6"
         ],
         "sourceMap": true,
-        "rootDir": "src",
-        "strict": true
+        "rootDir": ".",
+        "strict": true,
+        "baseUrl": "./",
     },
     "exclude": [
         "node_modules",

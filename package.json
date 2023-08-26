@@ -18,8 +18,13 @@
     "activationEvents": [],
     "main": "./dist/extension",
     "contributes": {
-        "commands": []
-    },
+        "commands": [
+            {
+                "command": "DownloadFile.downloadFile",
+                "title": "Download File"
+            }
+            ]
+        },
     "scripts": {
         "vscode:prepublish": "webpack --mode production",
         "compile": "npm run webpack",

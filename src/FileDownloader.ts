@@ -25,6 +25,7 @@ export interface FileDownloadSettings {
     retries?: number;
     retryDelayInMs?: number;
     shouldUnzip?: boolean;
+    headers?: Record<string, string | number | boolean>;
 }
 
 export default class FileDownloader implements IFileDownloader {
@@ -62,6 +63,7 @@ export default class FileDownloader implements IFileDownloader {
         const retries = settings?.retries ?? DefaultRetries;
         const retryDelayInMs = settings?.retryDelayInMs ?? DefaultRetryDelayInMs;
         const shouldUnzip = settings?.shouldUnzip ?? false;
+        const headers = settings?.headers;
         let progress = 0;
         let progressTimerId: any;
         try {
@@ -82,6 +84,7 @@ export default class FileDownloader implements IFileDownloader {
                 timeoutInMs,
                 retries,
                 retryDelayInMs,
+                headers,
                 cancellationToken,
                 onDownloadProgressChange
             );
